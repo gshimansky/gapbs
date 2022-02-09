@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sssp", "msvc\sssp_project\s
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tc", "msvc\tc_project\tc.vcxproj", "{3E608F17-99F4-42D2-B473-ED24B6DB4303}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "converter", "msvc\converter_project\converter.vcxproj", "{6146D27D-FCEA-41CA-A390-89ED71E79E4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{3E608F17-99F4-42D2-B473-ED24B6DB4303}.Release|x64.Build.0 = Release|x64
 		{3E608F17-99F4-42D2-B473-ED24B6DB4303}.Release|x86.ActiveCfg = Release|Win32
 		{3E608F17-99F4-42D2-B473-ED24B6DB4303}.Release|x86.Build.0 = Release|Win32
+		{6146D27D-FCEA-41CA-A390-89ED71E79E4E}.Debug|x64.ActiveCfg = Debug|x64
+		{6146D27D-FCEA-41CA-A390-89ED71E79E4E}.Debug|x64.Build.0 = Debug|x64
+		{6146D27D-FCEA-41CA-A390-89ED71E79E4E}.Debug|x86.ActiveCfg = Debug|Win32
+		{6146D27D-FCEA-41CA-A390-89ED71E79E4E}.Debug|x86.Build.0 = Debug|Win32
+		{6146D27D-FCEA-41CA-A390-89ED71E79E4E}.Release|x64.ActiveCfg = Release|x64
+		{6146D27D-FCEA-41CA-A390-89ED71E79E4E}.Release|x64.Build.0 = Release|x64
+		{6146D27D-FCEA-41CA-A390-89ED71E79E4E}.Release|x86.ActiveCfg = Release|Win32
+		{6146D27D-FCEA-41CA-A390-89ED71E79E4E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

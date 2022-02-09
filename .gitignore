@@ -17,3 +17,5 @@ benchmark/graphs/raw/*
 
 x64
 .vs
+*.user
+*.filters
