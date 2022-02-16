@@ -98,11 +98,58 @@ Wrappers for compiler intrinsics for atomic memory operations (AMOs)
                                       (const volatile uint64_t&) new_val);
     }
 
-  #else   // defined __GNUC__ __SUNPRO_CC
+  #elif _MSC_VER
+    #include <windows.h>
+
+    int32_t fetch_and_add(int32_t& x, int32_t inc) {
+      return InterlockedExchangeAdd((volatile LONG *)&x, inc) - inc;
+    }
+
+    int64_t fetch_and_add(int64_t& x, int64_t inc) {
+      return InterlockedExchangeAdd64((volatile LONG64 *)&x, inc) - inc;
+    }
+
+    uint32_t fetch_and_add(uint32_t& x, uint32_t inc) {
+      return InterlockedExchangeAdd((volatile LONG *)&x, inc) - inc;
+    }
+
+    uint64_t fetch_and_add(uint64_t& x, uint64_t inc) {
+      return InterlockedExchangeAdd64((volatile LONG64 *)&x, inc) - inc;
+    }
+
+    bool compare_and_swap(int32_t& x, const int32_t& old_val, const int32_t& new_val) {
+      return old_val == InterlockedCompareExchange((volatile LONG *)&x, old_val, new_val);
+    }
+
+    bool compare_and_swap(int64_t& x, const int64_t& old_val, const int64_t& new_val) {
+      return old_val == InterlockedCompareExchange64((volatile LONG64 *)&x, old_val, new_val);
+    }
+
+    bool compare_and_swap(uint32_t& x, const uint32_t& old_val, const uint32_t& new_val) {
+      return old_val == InterlockedCompareExchange((volatile LONG *)&x, old_val, new_val);
+    }
+
+    bool compare_and_swap(uint64_t& x, const uint64_t& old_val, const uint64_t& new_val) {
+      return old_val == InterlockedCompareExchange64((volatile LONG64 *)&x, old_val, new_val);
+    }
+
+    bool compare_and_swap(float& x, const float& old_val, const float& new_val) {
+      return old_val == InterlockedCompareExchange((volatile LONG *)&x,
+        (const volatile LONG &)old_val,
+        (const volatile LONG &)new_val);
+    }
+
+    bool compare_and_swap(double& x, const double& old_val, const double& new_val) {
+      return old_val == InterlockedCompareExchange64((volatile LONG64 *)&x,
+        (const volatile LONG64 &)old_val,
+        (const volatile LONG64 &)new_val);
+    }
+
+  #else// defined __GNUC__ __SUNPRO_CC _MSC_VER
 
     #error No atomics available for this compiler but using OpenMP
 
-  #endif  // else defined __GNUC__ __SUNPRO_CC
+  #endif  // else defined __GNUC__ __SUNPRO_CC _MSC_VER
 
 #else   // defined _OPENMP
 
