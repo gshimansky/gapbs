@@ -1,7 +1,7 @@
 @echo off
 set ARCH=x64
 set TARGET=Release
-set EXEC_PATH=%ARCH%\%TARGET%
+set EXEC_PATH=.
 
 mkdir test\out
 
