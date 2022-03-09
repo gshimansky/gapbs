@@ -102,19 +102,19 @@ Wrappers for compiler intrinsics for atomic memory operations (AMOs)
     #include <windows.h>
 
     int32_t fetch_and_add(int32_t& x, int32_t inc) {
-      return InterlockedExchangeAdd((volatile LONG *)&x, inc) - inc;
+      return InterlockedExchangeAdd((volatile LONG *)&x, inc);
     }
 
     int64_t fetch_and_add(int64_t& x, int64_t inc) {
-      return InterlockedExchangeAdd64((volatile LONG64 *)&x, inc) - inc;
+      return InterlockedExchangeAdd64((volatile LONG64 *)&x, inc);
     }
 
     uint32_t fetch_and_add(uint32_t& x, uint32_t inc) {
-      return InterlockedExchangeAdd((volatile LONG *)&x, inc) - inc;
+      return InterlockedExchangeAdd((volatile LONG *)&x, inc);
     }
 
     uint64_t fetch_and_add(uint64_t& x, uint64_t inc) {
-      return InterlockedExchangeAdd64((volatile LONG64 *)&x, inc) - inc;
+      return InterlockedExchangeAdd64((volatile LONG64 *)&x, inc);
     }
 
     bool compare_and_swap(int32_t& x, const int32_t& old_val, const int32_t& new_val) {
